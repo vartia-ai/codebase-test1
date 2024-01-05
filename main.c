@@ -21,7 +21,9 @@ int main()
     public_stuff_func2();
     public_things_func1();
     public_things_func2();
-    one_line_func();
+    float r1 = one_line_func(4.0);
+    float r2 = two_line_func(5.0);
+    printf("r1=%f, r2=%f\n", r1, r2);
     return 0;
 }
 
