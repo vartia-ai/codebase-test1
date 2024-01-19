@@ -1,6 +1,8 @@
 // main.c
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "stuff.h"
 #include "things.h"
@@ -16,6 +18,11 @@ char* hexstring_to_buffer(const char* hexstring) {
     
     buffer[buffer_len] = '\0';
     return buffer;
+}
+
+
+void data_function(char *data, int len) {
+    printf("data_function: %s\n", data);
 }
 
 // Single line prototype for one-line function. Prototype should not be included itself as a function in 
@@ -52,7 +59,3 @@ float one_line_func(float x) { return x; }
 float two_line_func(
     float x) { return x; };
 
-
-void data_function(char *data, int len) {
-    printf("data_function: %s\n", data);
-}
