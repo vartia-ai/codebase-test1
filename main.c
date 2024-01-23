@@ -26,6 +26,9 @@ void data_function(char *data, int len) {
     for (float i=0; i<10; i++) {
         one_line_func(i);
     }
+    for (float i=0; i<10; i++) {
+        two_line_func(i);
+    }
 }
 
 // Single line prototype for one-line function. Prototype should not be included itself as a function in 
