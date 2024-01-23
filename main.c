@@ -23,6 +23,9 @@ char* hexstring_to_buffer(const char* hexstring) {
 
 void data_function(char *data, int len) {
     printf("data_function: %s\n", data);
+    for (float i=0; i<10; i++) {
+        one_line_func(i);
+    }
 }
 
 // Single line prototype for one-line function. Prototype should not be included itself as a function in 
@@ -57,5 +60,5 @@ float one_line_func(float x) { return x; }
 
 // Two line function. This should be included as a function in code_extraction.py.
 float two_line_func(
-    float x) { return x; };
+    float x) { return one_line_func(x); };
 
