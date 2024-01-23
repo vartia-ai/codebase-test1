@@ -20,16 +20,8 @@ char* hexstring_to_buffer(const char* hexstring) {
     return buffer;
 }
 
-
-void data_function(char *data, int len) {
-    printf("data_function: %s\n", data);
-    for (float i=0; i<10; i++) {
-        one_line_func(i);
-    }
-    for (float i=0; i<10; i++) {
-        two_line_func(i);
-    }
-}
+// Used to test printig the the data passed into functions
+void data_function(char *data, int len);
 
 // Single line prototype for one-line function. Prototype should not be included itself as a function in 
 // code_extraction.py.
@@ -65,3 +57,12 @@ float one_line_func(float x) { return x; }
 float two_line_func(
     float x) { return one_line_func(x); };
 
+void data_function(char *data, int len) {
+    printf("data_function: %s\n", data);
+    for (float i=0; i<10; i++) {
+        one_line_func(i);
+    }
+    for (float i=0; i<10; i++) {
+        two_line_func(i);
+    }
+}
