@@ -1,6 +1,4 @@
 // main.c
-#include <inttypes.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,6 +6,8 @@
 
 #include "stuff.h"
 #include "things.h"
+
+typedef unsigned int uint_t;
 
 char* hexstring_to_buffer(const char* hexstring) {
     size_t len = strlen(hexstring);
@@ -23,7 +23,7 @@ char* hexstring_to_buffer(const char* hexstring) {
 }
 
 // Used to test printig the the data passed into functions
-void data_function(char *data, uint8_t len);
+void data_function(char *data, uint_t len);
 
 // Single line prototype for one-line function. Prototype should not be included itself as a function in 
 // code_extraction.py.
@@ -46,7 +46,7 @@ int main()
     printf("r1=%f, r2=%f\n", r1, r2);
     const char* hexstring = "DEADBEEF1234"; // Hex representation of "Hello World"
     char* buffer = hexstring_to_buffer(hexstring);
-    uint8_t len = strlen(buffer);
+    uint_t len = strlen(buffer);
     data_function(buffer, len);
     free(buffer);
 
@@ -60,7 +60,7 @@ float one_line_func(float x) { return x; }
 float two_line_func(
     float x) { return one_line_func(x); };
 
-void data_function(char *data, uint8_t len) {
+void data_function(char *data, uint_t len) {
     printf("data_function: %s\n", data);
     for (float i=0; i<10; i++) {
         one_line_func(i);
