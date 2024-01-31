@@ -44,7 +44,7 @@ int main()
     float r1 = one_line_func(4.0);
     float r2 = two_line_func(5.0);
     printf("r1=%f, r2=%f\n", r1, r2);
-    const char* hexstring = "DEADBEEF1234"; // Hex representation of "Hello World"
+    const char* hexstring = "68656C6C6F776F726C64"; // Hex representation of "Hello World"
     char* buffer = hexstring_to_buffer(hexstring);
     uint_t len = strlen(buffer);
     data_function(buffer, len);
