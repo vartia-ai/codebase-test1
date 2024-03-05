@@ -4,7 +4,7 @@
 
 //function that takes a pointer to a struct as an argument
 void print_struct(recursive_struct_type *s, int depth);
-void init_struct(recursive_struct_type *s, recursive_struct_type *next, char **data, int data_size);
+void init_struct(recursive_struct_type *s, recursive_struct_type *next, function_pointer_type print_fn, char **data, int data_size);
 
 void print_struct(recursive_struct_type *s, int depth)
 {
@@ -26,23 +26,23 @@ void print_struct(recursive_struct_type *s, int depth)
     }
 }
 
-void init_struct(recursive_struct_type *s, recursive_struct_type *next, char **data, int data_size)
+void init_struct(recursive_struct_type *s, recursive_struct_type *next, function_pointer_type print_fn, char **data, int data_size)
 {
     s->data = data;
     s->data_size = data_size;
     s->next = next;
     //call the print_struct function
-    s->function_pointer = print_struct;
+    s->function_pointer = print_fn;
 }
 
 void test_struct_trace()
 {   
     char *child_data[] = {"Hello", "Child!", NULL};
     recursive_struct_type child;
-    init_struct(&child, NULL, child_data, 2);
+    init_struct(&child, NULL, print_struct, child_data, 2);
 
     recursive_struct_type parent;
     char *parent_data[] = {"Hello", "Parent!", NULL};
-    init_struct(&parent, &child, parent_data, 2);
+    init_struct(&parent, &child, print_struct, parent_data, 2);
     parent.function_pointer(&parent, 0);
 }
