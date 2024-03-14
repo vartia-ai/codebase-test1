@@ -4,6 +4,8 @@ Makefile.in
 .vscode
 autom4te.cache
 config.h
+configure
+configure~
 config.log
 config.status
 stamp-h1
