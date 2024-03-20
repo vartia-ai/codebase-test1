@@ -1,7 +1,7 @@
 // things.c
 
 #include "things.h"
-
+#include "header_func.h"
 struct private_things_struct
 {
     char things[10];

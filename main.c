@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+#include "header_func.h"
 #include "stuff.h"
 #include "things.h"
-
+#include "complex_types.h"
 typedef unsigned int uint_t;
 
 char* hexstring_to_buffer(const char* hexstring) {
@@ -44,12 +44,12 @@ int main()
     float r1 = one_line_func(4.0);
     float r2 = two_line_func(5.0);
     printf("r1=%f, r2=%f\n", r1, r2);
-    const char* hexstring = "68656C6C6F776F726C64"; // Hex representation of "Hello World"
+    const char* hexstring = "48656C6C6F20576F726C64"; // Hex representation of "Hello World"
     char* buffer = hexstring_to_buffer(hexstring);
     uint_t len = strlen(buffer);
     data_function(buffer, len);
     free(buffer);
-
+    test_struct_trace();
     return 0;
 }
 
