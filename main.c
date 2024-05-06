@@ -8,7 +8,6 @@
 #include "things.h"
 #include "complex_types.h"
 
-#include <sanitizer/asan_interface.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
